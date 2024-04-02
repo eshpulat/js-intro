@@ -4,4 +4,4 @@ var n = 10;
 var t = 50;
 
 var principal = (p * (1 + r / n)) ^ (n * t);
-console.log(principal);
+console.log(principal); // 54

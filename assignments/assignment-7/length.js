@@ -9,6 +9,6 @@ console.log(post2.length);
 var comparisonResult1 = post1.length;
 var comparisonResult2 = post2.length;
 
-console.log(comparisonResult1 === comparisonResult2);
-console.log(comparisonResult1 < comparisonResult2);
-console.log(comparisonResult1 > comparisonResult2);
+console.log(comparisonResult1 === comparisonResult2); // false
+console.log(comparisonResult1 < comparisonResult2); // true
+console.log(comparisonResult1 > comparisonResult2); // false

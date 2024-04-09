@@ -2,16 +2,15 @@
 
 var greeting = "Hello, world!";
 
-console.log(greeting.indexOf("H")); // 0
-console.log(greeting.indexOf("e")); // 1
-console.log(greeting.indexOf("l")); // 2
+console.log(greeting[0]); // H
+console.log(greeting[1]); // E
+console.log(greeting[2]); // L
 
 // Explain how to access the last character of the greeting string.
 
 console.log(greeting[greeting.length - 1]); // !
-console.log(greeting[12]); // !
 
 // Log the last character and the one before it (the second-to-last character) to the console.
 
-console.log(greeting[12]);
-console.log(greeting[11]);
+console.log(greeting[greeting.length - 1]);
+console.log(greeting[greeting.length - 2]);

@@ -50,4 +50,16 @@ var result16 = "ReplaceAll"
     .replaceAll("l", "ll")
     .indexOf("ll")
     .toString()
-    .trim(); // ?????
+    .trim(); // valid chain
+// toString() changed method to string
+
+var result17 = "find me".toUpperCase().includes("FIND"); // valid chain
+
+var result18 = " space ".trim().trimStart().trimEnd().length.toString(); // valid chain
+// this all trim() give the string, toString() change method for string and everthing will be string
+
+var result19 = "EndsWith".toLowerCase().endsWith("swith"); // valid chain
+// Explanation: The methods are correctly applied in sequence to operate on strings.
+
+var result20 = "multiple words".slice(0, 8).trim().toUpperCase(); // valid chain
+// this all working with string, results will bu string.

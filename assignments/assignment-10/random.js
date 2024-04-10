@@ -1,11 +1,11 @@
 // Between 1 and 10
 
-var random1 = Math.floor(Math.random() * 10) + 1;
+var random1 = Math.ceil(Math.random() * 10);
 console.log(random1);
 
 // Between 1 and 100
 
-var random2 = Math.floor(Math.random() * 100) + 1;
+var random2 = Math.ceil(Math.random() * 100);
 console.log(random2);
 
 // Between 50 and 100
@@ -15,12 +15,12 @@ console.log(random3);
 
 // Between -10 and 10
 
-var random4 = Math.floor(Math.random() * 20) - 10;
+var random4 = Math.ceil(Math.random() * 20) - 10;
 console.log(random4);
 
 // Between -100 and 100
 
-var random5 = Math.floor(Math.random() * 200) - 100;
+var random5 = Math.ceil(Math.random() * 200) - 100;
 console.log(random5);
 
 // Between 1000 and 2000
@@ -30,17 +30,17 @@ console.log(random6);
 
 // Between -1000 and 0
 
-var random7 = Math.floor(Math.random() * 1000) - 1000;
+var random7 = Math.ceil(Math.random() * 1000) - 1000;
 console.log(random7);
 
 // Between 1 and 1000
 
-var random8 = Math.floor(Math.random() * 1000) + 1;
+var random8 = Math.ceil(Math.random() * 1000);
 console.log(random8);
 
 // Between -500 and 500
 
-var random9 = Math.floor(Math.random() * 1000) - 500;
+var random9 = Math.ceil(Math.random() * 1000) - 500;
 console.log(random9);
 
 // Between 10000 and 20000

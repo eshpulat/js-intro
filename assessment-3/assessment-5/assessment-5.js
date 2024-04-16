@@ -44,8 +44,21 @@ if (count1 && count2 === 0) {
 // Challenge-3
 
 var randomNumber = Math.ceil(Math.random() * 1000);
+var fizz5 = randomNumber % 5 === 0;
+var calculatefizz5 = randomNumber - fizz5;
+var fizz3 = randomNumber % 3 === 0;
+var calculatefizz3 = randomNumber - fizz3;
 
-//Challenge-4
+if (calculatefizz5 % 3 === 0) {
+    console.log("Fizz");
+}
+if (calculatefizz3 % 5 === 0) {
+    console.log("Buzz");
+}
+if (fizz3 && fizz5) {
+    console.log("FizzBuzz");
+}
+// Challenge-4
 
 var sentence =
     "I find myself reflecting on past adventures, realizing that my greatest discoveries were often right at home, hidden in plain sight, waiting to be appreciated, and truly making them mine.";
@@ -58,3 +71,11 @@ var words = sentence
 console.log(words);
 
 // Challenge-5
+
+// Challenge-6
+
+// .trim() this method remove the space begin and ends.
+
+// .trimEnd() this methods remove the space just ends.
+
+// .trimStart() this methods remove the space just begin.

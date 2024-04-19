@@ -68,3 +68,27 @@ function longestString(string1, string2, string3) {
 console.log(longestString("hello", "world", "spaces here")); // Outputs: "spaces here"
 console.log(longestString("short", "medium length", "longest one here")); // Outputs: "longest one here"
 console.log(longestString("one", "two", "three")); // Outputs: "three"
+
+// ------------- 5 ------------ //
+
+function shortestString(str1, str2, str3) {
+    var removeCharacterStr1 = str1.replaceAll("?", "");
+    var removeCharacterStr2 = str2.replaceAll("!", "");
+    var removeCharacterStr3 = str3.replaceAll(".", "");
+    if (
+        removeCharacterStr1.length < removeCharacterStr2.length &&
+        removeCharacterStr1.length < removeCharacterStr3.length
+    ) {
+        return removeCharacterStr1;
+    } else if (
+        removeCharacterStr2.length < removeCharacterStr1.length &&
+        removeCharacterStr2.length < removeCharacterStr3.length
+    ) {
+        return removeCharacterStr2;
+    } else {
+        return removeCharacterStr3;
+    }
+}
+console.log(shortestString("hello?", "wo!rld", "yes.")); // Outputs: "yes"
+console.log(shortestString("how are you?", "I am fine!", "What about you?")); // Outputs: "I am fine"
+console.log(shortestString("this is a test?", "short!", "even shorter.")); // Outputs: "short"

@@ -48,7 +48,6 @@ console.log(randomtest5);
 
 var creativeString =
     "Exploring the vast universe of code can lead to unexpected discoveries.";
-var length = creativeString.length - 1;
-var lengthrandom = Math.floor(Math.random() * 71) + 1;
-
-console.log(creativeString.slice(lengthrandom));
+var randomIndex = Math.floor(Math.random() * creativeString.length);
+var extractedText = creativeString.slice(randomIndex + 1);
+console.log("Text after index " + randomIndex + ": " + extractedText);

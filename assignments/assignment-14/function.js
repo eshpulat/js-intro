@@ -9,8 +9,8 @@ isOdd(4); // false
 
 // ---------- 2 ------------//
 
-function isEven(number2) {
-    var evenNumber = number2 % 2 === 0;
+function isEven(number) {
+    var evenNumber = number % 2 === 0;
     console.log(evenNumber);
 }
 isEven(4); // true
@@ -45,10 +45,10 @@ minValue(40, 40);
 // ----------- 5 ------------//
 
 function maxValue(number5, number6) {
-    if (number5 < number6) {
-        console.log(number6);
-    } else if (number5 > number6) {
+    if (number5 > number6) {
         console.log(number5);
+    } else if (number5 < number6) {
+        console.log(number6);
     }
     if (number5 === number6) {
         console.log(number5, number6);
@@ -69,8 +69,9 @@ power(5, 0); // 1
 // -------------- 7 -----------//
 
 function isProductGreater(num1, num2, num3) {
-    var numproductsum = num1 * num2 * num3 > num1 + num2 + num3;
-    console.log(numproductsum);
+    var product = num1 * num2 * num3;
+    var sum = num1 + num2 + num3;
+    console.log(product > sum);
 }
 isProductGreater(1, 2, 3); // false
 isProductGreater(5, 6, 2); // true
@@ -78,14 +79,16 @@ isProductGreater(5, 6, 2); // true
 // ------------ 8 -----------//
 
 function swapFirstAndLastChars(string) {
-    var stringfirstchar = string[0];
-    var stringmiddlechar = string.slice(1, -1);
-    var stringlastchar = string.slice(-1);
-    var swap = stringlastchar + stringmiddlechar + stringfirstchar;
-    console.log(swap);
+    if (string.length > 1) {
+        var firstChar = string[0];
+        var lastChar = string[string.length - 1];
+        var middle = string.slice(1, string.length - 1);
+        var newString = lastChar + middle + firstChar;
+        console.log(newString);
+    } else {
+        console.log(string); // Handles case where string is only one character or empty
+    }
 }
-swapFirstAndLastChars("hello"); // oellh
-swapFirstAndLastChars("abcd"); // dbsa
 
 // ------------- 9 ------------//
 
@@ -102,14 +105,11 @@ firstHalf("four"); // fo
 // ------------ 10 ------------//
 
 function getInitials(fullName) {
-    var firstLetterName = fullName[0];
-    var secondLetterIdx = fullName.indexOf(" ");
-    var secondLetterName = fullName[secondLetterIdx + 1];
-    var withoutfirstspace = fullName.replace(" ", "");
-    var thirdletterIdx = withoutfirstspace.indexOf(" ");
-    var thirdLetterName = withoutfirstspace[thirdletterIdx + 1];
-    var fullNameLetter = firstLetterName + secondLetterName + thirdLetterName;
-    console.log(fullNameLetter);
+    var firstSpaceIndex = fullName.indexOf(" ");
+    var lastSpaceIndex = fullName.lastIndexOf(" ");
+    var initial1 = fullName[0];
+    var initial2 = fullName[firstSpaceIndex + 1];
+    var initial3 = fullName[lastSpaceIndex + 1];
+    var initials = initial1 + initial2 + initial3;
+    console.log(initials.toUpperCase());
 }
-getInitials("John Fitzgerald Kennedy"); // JFK
-getInitials("Martin Luther King"); //  MLK

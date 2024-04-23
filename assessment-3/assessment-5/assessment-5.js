@@ -42,22 +42,15 @@ if (count1 && count2 === 0) {
 }
 
 // Challenge-3
-
-var randomNumber = Math.ceil(Math.random() * 1000);
-var fizz5 = randomNumber % 5 === 0;
-var calculatefizz5 = randomNumber - fizz5;
-var fizz3 = randomNumber % 3 === 0;
-var calculatefizz3 = randomNumber - fizz3;
-
-if (calculatefizz5 % 3 === 0) {
+var randomNumber = Math.floor(Math.random() * 1000) + 1; // Generate a random number between 1 and 1000
+if (randomNumber % 3 === 0 && randomNumber % 5 !== 0) {
     console.log("Fizz");
-}
-if (calculatefizz3 % 5 === 0) {
+} else if (randomNumber % 5 === 0 && randomNumber % 3 !== 0) {
     console.log("Buzz");
-}
-if (fizz3 && fizz5) {
+} else if (randomNumber % 3 === 0 && randomNumber % 5 === 0) {
     console.log("FizzBuzz");
 }
+
 // Challenge-4
 
 var sentence =
@@ -71,6 +64,16 @@ var words = sentence
 console.log(words);
 
 // Challenge-5
+
+var mainString =
+    "Exploring the vast universe of code can lead to unexpected discoveries.";
+var targetString = "universe";
+var foundIndex = mainString.indexOf(targetString);
+if (foundIndex !== -1) {
+    console.log(targetString + " string is in " + mainString);
+} else {
+    console.log(targetString + " is not in this " + mainString);
+}
 
 // Challenge-6
 

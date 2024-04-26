@@ -1,32 +1,5 @@
 // Challenge-1
 
-function countAE(str1) {
-    var countCharUpperStr1A = str1.replaceAll("A", "");
-    var countCharUpperStr1E = str1.replaceAll("E", "");
-    var countCharUpperStr1a = str1.replaceAll("a", "");
-    var countCharUpperStr1e = str1.replaceAll("e", "");
-    var lengthOfCountStr1A = countCharUpperStr1A.length;
-    var lengthOfCountStr1E = countCharUpperStr1E.length;
-    var lengthOfCountStr1a = countCharUpperStr1a.length;
-    var lengthOfCountStr1e = countCharUpperStr1e.length;
-    var included = str1.includes(countCharUpperStr1A);
-    console.log(included);
-    console.log(countCharUpperStr1A);
-
-    // var countCharlowera = str1.replace("a", "") && str2.replace("a", "");
-    // var countCharUpperE = str1.replace("E", "") && str2.replace("E", "");
-    // var countCharlowere = str1.replace("e", "") && str2.replace("e", "");
-    // var lowerCaseStr = str1.toLowerCase();
-    // var lowerCaseStr = str2.toLowerCase();
-    // var countCharstr1 = str1.replace("a", "");
-    // var countCharstr2 = str2.replace("A", "");
-}
-console.log(countAE("AREA")); // True
-// console.log(countAE("banana", "SAND") === "banana"); // True
-// console.log(countAE("Agile", "Eagle") === "Eagle"); // True
-// console.log(countAE("case", "CASE") === "case"); // True, as either is acceptable since the counts are equal.
-// console.log(countAE("rate", "tear") === "rate"); // True, as either is acceptable since the counts are equal.
-
 // Challenge-2
 
 function findMax(num1, num2, num3, num4) {
@@ -70,6 +43,27 @@ console.log(findMinAbsValue("102.3", "-55.55", "55.56") === 55.55); // True
 console.log(findMinAbsValue("-999", "1000", "0") === 0); // True
 
 // Challenge-4
+
+function fewerZeroes(num1, num2) {
+    var convertToString1 = num1.toString();
+    var convertToString2 = num2.toString();
+
+    var replaceToString1 = convertToString1.replaceAll("0", " ");
+    var replaceToString2 = convertToString2.replaceAll("0", " ");
+
+    if (replaceToString1 === replaceToString2) {
+        return num1;
+    } else if (replaceToString1 < replaceToString2) {
+        return num1;
+    } else {
+        return num2;
+    }
+}
+console.log(fewerZeroes(1234567890, 123456789) === 123456789); // True
+console.log(fewerZeroes(100000001, 200000000) === 100000001); // True
+console.log(fewerZeroes(900000000, 800000001) === 800000001); // True
+console.log(fewerZeroes(123000123, 456000456) === 123000123); // True
+console.log(fewerZeroes(100100100, 200200200) === 100100100); // True
 
 // Challenge-5
 

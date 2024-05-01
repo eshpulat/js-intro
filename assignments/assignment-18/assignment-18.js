@@ -41,14 +41,74 @@ function sumOfSquares(n) {
 // console.log(sumOfSquares(5)); // Outputs: 55 (1^2 + 2^2 + 3^2 + 4^2 + 5^2)
 // console.log(sumOfSquares(2)); // Outputs: 5 (1^2 + 2^2)
 
-// 4. countPerfectSquares ?????????
+//  ---------- 4 ---------- countPerfectSquares
+
+function countPerfectSquares(num1, num2) {
+    var counter = 0;
+    for (var i = num1; i <= num2; i++) {}
+    return counter;
+}
+
+console.log(countPerfectSquares(1, 25)); // Outputs: 5 (1, 4, 9, 16, 25)
+console.log(countPerfectSquares(9, 49)); // Outputs: 5 (9, 16, 25, 36, 49)
+console.log(countPerfectSquares(30, 70)); // Outputs: 2 (36, 49)
 
 // ---------- 5 ---------- countDigitsSumDivisibleByThree
-function countDigitsSumDivisibleByThree(num1, num2) {
-    var result = 0;
-    for (var i = num1; i <= num2; i++) {
-        if (i % 3 === 0) result += 1;
+
+function sumUpDigits(number) {
+    if (number < 10) {
+        return number;
     }
-    return result;
+
+    var stringNumber = number.toString();
+    var sum = 0;
+    sum += parseInt(stringNumber[0]) + parseInt(stringNumber[1]);
+
+    if (stringNumber.length === 3) {
+        sum += parseInt(stringNumber[2]);
+    }
+
+    return sum;
+}
+
+function countDigitsSumDivisibleByThree(min, max) {
+    var counter = 0;
+    for (var i = min; i <= max; i++) {
+        var digitSum = sumUpDigits(i);
+        if (digitSum % 3 === 0) {
+            counter++;
+        }
+    }
+    return counter;
 }
 // console.log(countDigitsSumDivisibleByThree(7, 12)); // Outputs: 2
+
+// ------------- 6 ------------- multiplyAllDigits
+
+function multiplyAllDigits(num1, num2) {
+    var stringNumber1 = num1.toString();
+    var stringNumber2 = num2.toString();
+    var multiplyNumber1 =
+        parseInt(stringNumber1[0]) *
+        parseInt(stringNumber1[1]) *
+        parseInt(stringNumber1[2]);
+
+    var multiplyNumber2 =
+        parseInt(stringNumber2[0]) *
+        parseInt(stringNumber2[1]) *
+        parseInt(stringNumber2[2]);
+
+    return multiplyNumber1 * multiplyNumber2;
+}
+
+// console.log(multiplyAllDigits(123, 678));
+// // Expected output: 2016
+// // Explanation: 1*2*3*6*7*8 = 2016
+
+// console.log(multiplyAllDigits(234, 567));
+// // Expected output: 30240
+// // Explanation: 2*3*4*5*6*7 = 5040
+
+// console.log(multiplyAllDigits(111, 999));
+// // Expected output: 729
+// // Explanation: 1*1*1*9*9*9 = 729

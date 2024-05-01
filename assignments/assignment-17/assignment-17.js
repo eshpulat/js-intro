@@ -1,12 +1,11 @@
 // ------ 1 ----- sumExclusiveRange
 
 function sumExclusiveRange(min, max) {
-    var themselvesMin = min + 1;
     var sum = 0;
     if (max < min) {
         return "Not valid range.";
     }
-    for (var i = themselvesMin; i < max; i++) {
+    for (var i = min + 1; i < max; i++) {
         sum += i;
     }
     return sum;
@@ -29,9 +28,9 @@ function sumEvenNumbers(n) {
     return sum;
 }
 
-console.log(sumEvenNumbers(10)); // 32
-console.log(sumEvenNumbers(7)); // 12
-console.log(sumEvenNumbers(15)); // 56
+// console.log(sumEvenNumbers(10)); // 32
+// console.log(sumEvenNumbers(7)); // 12
+// console.log(sumEvenNumbers(15)); // 56
 
 // ------ 3 ------- factorial
 function factorial(n) {
@@ -41,13 +40,21 @@ function factorial(n) {
     }
     return factorial;
 }
-console.log(factorial(5));
-console.log(factorial(3));
-console.log(factorial(7));
+// console.log(factorial(5));
+// console.log(factorial(3));
+// console.log(factorial(7));
 
 // ----------- 4 --------- sumUpToMax
 
 function sumUpToMax(num1, num2, num3) {
+    if (num1 < 1) {
+        return 0;
+    } else if (num2 < 1) {
+        return 0;
+    } else if (num3 < 1) {
+        return 0;
+    }
+
     var maxNum = num1;
     if (maxNum < num2) maxNum = num2;
     if (maxNum < num3) maxNum = num3;
@@ -59,11 +66,11 @@ function sumUpToMax(num1, num2, num3) {
     return sum;
 }
 
-console.log(sumUpToMax(3, 5, 1)); // Outputs: 15 (sum of numbers from 1 to 5)
-console.log(sumUpToMax(10, 5, 3)); // Outputs: 55 (sum of numbers from 1 to 10)
-console.log(sumUpToMax(1, 2, 3)); // Outputs: 6 (sum of numbers from 1 to 3)
-console.log(sumUpToMax(-1, -2, -3)); // Outputs: 0 (no positive numbers up to the max) // ???????
-console.log(sumUpToMax(7, 0, 5)); // Outputs: 0 (presence of zero invalidates the sum) // ??????
+// console.log(sumUpToMax(3, 5, 1)); // Outputs: 15 (sum of numbers from 1 to 5)
+// console.log(sumUpToMax(10, 5, 3)); // Outputs: 55 (sum of numbers from 1 to 10)
+// console.log(sumUpToMax(1, 2, 3)); // Outputs: 6 (sum of numbers from 1 to 3)
+// console.log(sumUpToMax(-1, -2, -3)); // Outputs: 0 (no positive numbers up to the max)
+// console.log(sumUpToMax(7, 0, 5)); // Outputs: 0 (presence of zero invalidates the sum)
 
 // ------- 5 --------- sumDivisibleByFour
 
@@ -78,6 +85,6 @@ function sumDivisibleByFour(min, max) {
     return sum;
 }
 
-console.log(sumDivisibleByFour(1, 10)); // Outputs: 12 (4+8)
-console.log(sumDivisibleByFour(4, 20)); // Outputs: 56 (4+8+12+16+20)
-console.log(sumDivisibleByFour(3, 15)); // Outputs: 24 (4+8+12)
+// console.log(sumDivisibleByFour(1, 10)); // Outputs: 12 (4+8)
+// console.log(sumDivisibleByFour(4, 20)); // Outputs: 56 (4+8+12+16+20)
+// console.log(sumDivisibleByFour(3, 15)); // Outputs: 24 (4+8+12)

@@ -13,7 +13,7 @@ function generatePatternedString(n) {
 
     var string = "";
 
-    for (var i = 0; i < n; i++) {
+    for (var i = 1; i <= n; i++) {
         if (i % 4 < 3) {
             string += randomLetters;
         } else {

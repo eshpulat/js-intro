@@ -45,3 +45,45 @@ for (var i = 0; i < str.length; i++) {
     }
 }
 console.log(acronym);
+
+// assignment-23
+
+// ---------- 1 ----------- stringToArray
+
+function stringToArray(str) {
+    var array = [];
+    for (var i = 0; i < str.length; i++) {
+        array.push(str[i]);
+    }
+
+    return array;
+}
+console.log(stringToArray("Hello, World!"));
+console.log(stringToArray("JavaScript"));
+
+// ------------- 2 ------------ areVowelsMore
+
+function areVowelsMore(str) {
+    var string = str.toLowerCase();
+    var count = "";
+    for (var i = 0; i < string.length; i++) {
+        if (
+            string[i] !== "o" &&
+            string[i] !== "e" &&
+            string[i] !== "i" &&
+            string[i] !== "u" &&
+            string[i] !== "a"
+        ) {
+            count += string[i];
+        }
+    }
+    var consonantsChar = count.length;
+    var vowelsChar = str.length - count.length;
+    if (vowelsChar > consonantsChar) {
+        return true;
+    } else {
+        return false;
+    }
+}
+console.log(areVowelsMore("Hello"));
+console.log(areVowelsMore("Eerie"));

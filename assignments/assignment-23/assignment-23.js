@@ -87,3 +87,40 @@ function areVowelsMore(str) {
 }
 console.log(areVowelsMore("Hello"));
 console.log(areVowelsMore("Eerie"));
+
+// ------------- 3 --------------- sumOfLetterPositions ?????????
+
+function sumOfLetterPositions(str) {
+    var alphabet = "absdefjhijklmnopqrstuvwxyz";
+
+    var count = alphabet[9];
+
+    for (var i = 0; i < str.length; i++) {}
+
+    return count;
+}
+
+console.log(sumOfLetterPositions("abcuy"));
+
+// ---------------- 4 -------------- countMatchingChars
+
+function countMatchingChars(str1, str2) {
+    if (str1.length !== str2.length) {
+        console.log("length not equal");
+    }
+
+    let count = 0;
+
+    for (var i = 0; i < str1.length; i++) {
+        if (str1[i] === str2[i]) {
+            count++;
+        }
+    }
+    return count;
+}
+
+console.log(countMatchingChars("hello", "hxllo"));
+
+console.log(countMatchingChars("abc", "def")); // Returns: 0 (no matching characters)
+
+// --------------- 5 ------------

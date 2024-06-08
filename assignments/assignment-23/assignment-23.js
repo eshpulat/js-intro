@@ -2,7 +2,7 @@
 
 var str = "Hello world";
 for (var i = 0; i < str.length; i++) {}
-console.log(str[i - 1]);
+// console.log(str[i - 1]);
 
 // use cases
 
@@ -13,7 +13,7 @@ for (var i = 0; i < str.length; i++) {
         count++;
     }
 }
-console.log(count);
+// console.log(count);
 
 // reversing string
 
@@ -22,7 +22,7 @@ var reversed = "";
 for (var i = str.length - 1; i >= 0; i--) {
     reversed += str[i];
 }
-console.log(reversed);
+// console.log(reversed);
 
 // Removing Specific Characters
 
@@ -33,7 +33,7 @@ for (var i = 0; i < str.length; i++) {
         result += str[i];
     }
 }
-console.log(result);
+// console.log(result);
 
 // Creating an Acronym ???
 
@@ -44,7 +44,7 @@ for (var i = 0; i < str.length; i++) {
         acronym += str[i];
     }
 }
-console.log(acronym);
+// console.log(acronym);
 
 // assignment-23
 
@@ -58,8 +58,8 @@ function stringToArray(str) {
 
     return array;
 }
-console.log(stringToArray("Hello, World!"));
-console.log(stringToArray("JavaScript"));
+// console.log(stringToArray("Hello, World!"));
+// console.log(stringToArray("JavaScript"));
 
 // ------------- 2 ------------ areVowelsMore
 
@@ -85,22 +85,29 @@ function areVowelsMore(str) {
         return false;
     }
 }
-console.log(areVowelsMore("Hello"));
-console.log(areVowelsMore("Eerie"));
+// console.log(areVowelsMore("Hello"));
+// console.log(areVowelsMore("Eerie"));
 
 // ------------- 3 --------------- sumOfLetterPositions ?????????
 
 function sumOfLetterPositions(str) {
     var alphabet = "absdefjhijklmnopqrstuvwxyz";
 
-    var count = alphabet[9];
+    var sum = 0;
 
-    for (var i = 0; i < str.length; i++) {}
+    for (var i = 0; i < str.length; i++) {
+        var strLowerCase = str[i].toLowerCase();
+        var eachLetter = alphabet.indexOf(strLowerCase);
+        if (str[i] !== -1) {
+            sum += eachLetter + 1;
+        }
+    }
 
-    return count;
+    return sum;
 }
 
-console.log(sumOfLetterPositions("abcuy"));
+// console.log(sumOfLetterPositions("abc"));
+// console.log(sumOfLetterPositions("Hello"));
 
 // ---------------- 4 -------------- countMatchingChars
 
@@ -119,8 +126,118 @@ function countMatchingChars(str1, str2) {
     return count;
 }
 
-console.log(countMatchingChars("hello", "hxllo"));
+// console.log(countMatchingChars("hello", "hxllo"));
 
-console.log(countMatchingChars("abc", "def")); // Returns: 0 (no matching characters)
+// console.log(countMatchingChars("abc", "def")); // Returns: 0 (no matching characters)
 
-// --------------- 5 ------------
+// --------------- 5 ------------ convertToAlphabetPositions
+
+function convertToAlphabetPositions(str) {
+    let alphabet = "abcdefjhijklmnopqrstuvwxyz";
+
+    let newString = "";
+
+    for (let i = 0; i < str.length; i++) {
+        let lowerCase = str[i].toLowerCase();
+        let eschLetter = alphabet.indexOf(lowerCase);
+
+        if (eschLetter === -1) {
+            continue;
+        }
+        newString += eschLetter + 1 + " ";
+    }
+    return newString;
+}
+
+// console.log(convertToAlphabetPositions("abc")); // Returns: "1 2 3"
+// console.log(convertToAlphabetPositions("Hello World!")); // Returns: "8 5 12 12 15 23 15 18 12 4"
+
+// -------------- 6 ------------- extractConsonants
+
+function extractConsonants(str) {
+    let array = [];
+    let result = "";
+
+    for (let i = 0; i < str.length; i++) {
+        if (
+            str[i] !== "o" &&
+            str[i] !== "a" &&
+            str[i] !== "e" &&
+            str[i] !== "i" &&
+            str[i] !== "u" &&
+            str[i] !== " " &&
+            str[i] !== "," &&
+            str[i] !== "!"
+        ) {
+            result += str[i] + " ";
+        }
+    }
+    array.push(result);
+    return array;
+}
+
+// console.log(extractConsonants("Hello, World!"));
+// console.log(extractConsonants("JavaScript"));
+
+// ----------------- 7 ---------- countUppercaseLetters ???
+
+function countUppercaseLetters(str) {
+    let count = 0;
+    for (let i = 0; i < str.length; i++) {
+        if (i === 0 || str[i - 1] === " ") {
+            count++;
+        }
+    }
+
+    return count;
+}
+
+// console.log(countUppercaseLetters("Hello, World!")); // Returns: 2
+// console.log(countUppercaseLetters("JavaScript")); // Returns: 2
+
+// -------------- 8 ---------- hasConsecutiveSameLetters
+
+function hasConsecutiveSameLetters(str) {
+    for (let i = 0; i < str.length - 1; i++) {
+        if (str[i] === str[i + 1]) {
+            return true;
+        }
+    }
+    return false;
+}
+
+// console.log(hasConsecutiveSameLetters("hello")); // Returns: true (because of "ll")
+// console.log(hasConsecutiveSameLetters("world")); // Returns: false
+
+// ----------------- 9 ------------- isPalindrome ?????
+
+// --------------- 10 ------------ countQueryStrings
+
+function countQueryStrings(str) {
+    let array = [];
+    let equal = 0;
+    let logical = 0;
+    let questionMark = 0;
+
+    for (let i = 0; i < str.length; i++) {
+        if (str[i] === "=") {
+            equal++;
+        }
+        if (str[i] === "&") {
+            logical++;
+        }
+
+        if (str[i] === "?") {
+            questionMark++;
+        }
+    }
+    array.push(questionMark, logical, equal);
+    return array;
+}
+
+console.log(
+    countQueryStrings("https://example.com?page=1&sort=desc&order=asc")
+); // Returns: [1, 3, 2]
+console.log(
+    countQueryStrings("https://example.com?search=test&filter=active&limit=10")
+); // Returns: [1, 3, 2]

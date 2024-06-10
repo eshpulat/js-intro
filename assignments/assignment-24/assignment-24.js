@@ -55,7 +55,7 @@ console.log(binaryCounter([0, 1, 0, 1, 1, 0, 0, 1])); // Outputs [4, 4])
 
 // ------------ 5 ---------- uniqueStringFilter
 
-function uniqueStringFilter(arr) {
+function uniqueStringFilter1(arr) {
     let count = [];
 
     for (let i = 0; i < arr.length; i++) {
@@ -70,10 +70,27 @@ function uniqueStringFilter(arr) {
     return count;
 }
 
+function uniqueStringFilter(words) {
+    var unique = [];
+    var lowercasedUnique = [];
+
+    for (var i = 0; i < words.length; i++) {
+        var word = words[i];
+
+        if (!lowercasedUnique.includes(word.toLowerCase())) {
+            unique.push(word);
+            lowercasedUnique.push(word.toLowerCase());
+        }
+    }
+    return unique;
+}
+
+//["Hello", "hi"].includes("hello");
 console.log(
     uniqueStringFilter([
         "Hello",
-        "hello",
+        "helLo",
+        "world",
         "World",
         "world",
         "WORLD",
@@ -81,7 +98,7 @@ console.log(
         "HELLO",
         "Test"
     ])
-); // Outputs ["Hello", "World", "Test"]
+); // Outputs ["Hello", "world", "Test"]
 
 // -------------- 6 ------------ oddNumberSum
 

@@ -24,3 +24,21 @@ for (var i = 0; i < words.length; i++) {
 }
 
 console.log(abbreviation); // Output: "NASA"
+
+// join method
+
+var arr = ["The", "quick", "brown", "fox"];
+var sentence = arr.join(" ");
+console.log(sentence);
+
+var arr = ["The", "quick", "brown", "fox"];
+var withOutSpace = arr.join();
+console.log(withOutSpace);
+
+var arr = ["2024", "06", "08"];
+var hyphenSperated = arr.join("-");
+console.log(hyphenSperated);
+
+var arr = ["H", "e", "l", "l", "o"];
+let joined = arr.join("");
+console.log(joined);

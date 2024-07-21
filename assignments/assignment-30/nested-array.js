@@ -141,7 +141,6 @@ console.log(sumArray([1, 2, [3, 4, 5, 6], 7, [8, 9]]));
 // ------------------- 6 ------------- capitalizeStrings ???????????
 
 function capitalizeStrings(arr) {
-    // let upperCase = [];
     let array1 = [];
     let array = [];
 
@@ -159,7 +158,16 @@ function capitalizeStrings(arr) {
 
 // --------------- 7 ------------------ findMinMaxArrays
 
-function findMinMaxArrays(arr) {}
+function findMinMaxArrays(arr) {
+    let max = 0;
+    let min = 0;
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 0; j < arr[i].length; j++) {
+            console.log(arr[i][j]);
+        }
+    }
+    return;
+}
 
 console.log(
     findMinMaxArrays([
@@ -182,11 +190,11 @@ function mergeNestedArrays(arr) {
     return array;
 }
 
-console.log(
-    mergeNestedArrays([
-        [1, 2],
-        [3, 4],
-        [5, 6]
-    ])
-);
-// Expected output: [1, 2, 3, 4, 5, 6]
+// console.log(
+//     mergeNestedArrays([
+//         [1, 2],
+//         [3, 4],
+//         [5, 6]
+//     ])
+// );
+// // Expected output: [1, 2, 3, 4, 5, 6]

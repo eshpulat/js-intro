@@ -115,13 +115,9 @@ function primeRange(arr) {
 function allSubstrings(str) {
     let array = [];
     for (let i = 0; i < str.length; i++) {
-        let str1 = str[i];
-        for (let j = 0; j < str.length; j++) {
-            let str2 = str[j];
-            for (let k = 0; k < str.length; k++) {
-                let str3 = str[k];
-                array.push(str1, str2, str3);
-            }
+        for (let j = i + 1; j <= str.length; j++) {
+            let str2 = str.slice(i, j);
+            array.push(str2);
         }
     }
 
